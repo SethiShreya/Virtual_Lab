@@ -37,11 +37,16 @@
   // Check if the 'ar' query parameter is set to 'true'
   const urlParams = new URLSearchParams(window.location.search);
   const arParam = urlParams.get('ar');
-  
+
+  console.log("Got the ar parameter "+arParam);
+
   if (arParam === 'true') {
     // Simulate the AR button click
     document.getElementById('ar-button').click();
+    console.log("Got the button and click it");
   }
+
+
 });
   </script>
 </body>

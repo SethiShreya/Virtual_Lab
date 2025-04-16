@@ -9,45 +9,25 @@
   </head> 
 <body>
   <div id="card">
-    <model-viewer src="satellite.glb"
-                  ios-src="iphone/310.usdz"
-                  poster="https://raw.githubusercontent.com/lightlessdays/web-ar/main/loading_screen.gif"
-                  alt="A 3D model"
-                  shadow-intensity="1"
-                  position="0 0"
-                  camera-controls
-                  autoplay
-                  auto-rotate ar>
 
-                  <button slot="ar-button" id="ar-button">
-                    View in your space
-                  </button>
-    </model-viewer>
-    <section class="attribution">
-      <span>
-        <h1>Server Rack</h1>
-    </section>
-  </div>
-  <script type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-  </script>
+    <custom-viewer src="/wall.glb"  
+    poster="https://xrvisionlabs.com/wp-content/uploads/loading.svg"  
+    autoplay  
+    alt="A 3D model"  
+    shadow-intensity="1"  
+    scale="1 1 1"  
+     
+    exposure="1" 
+    camera-controls  
+    touch-action="pan-y"  
+    ar ar-placement="wall" 
+    auto-rotate>  
+    </custom-viewer>  
+         
+      </div>  
+      <script type="module"  
+          src="/model-viewer.min.js">  
+      </script>
 
-  <script>
-    window.addEventListener('load', (event) => {
-  // Check if the 'ar' query parameter is set to 'true'
-  const urlParams = new URLSearchParams(window.location.search);
-  const arParam = urlParams.get('ar');
-
-  console.log("Got the ar parameter "+arParam);
-
-  if (arParam === 'true') {
-    // Simulate the AR button click
-    document.getElementById('ar-button').click();
-    console.log("Got the button and click it");
-  }
-
-
-});
-  </script>
-</body>
+  </body>
 </html>
